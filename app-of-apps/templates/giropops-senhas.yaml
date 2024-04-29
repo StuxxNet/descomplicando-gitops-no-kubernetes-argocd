@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: giropops-senhas
+  namespace: argocd
+spec:
+  project: default
+  source:
+    helm: {}
+    repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
+    targetRevision: main
+    path: giropops-senhas/helm
+  destination:
+    namespace: giropops-senhas
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
