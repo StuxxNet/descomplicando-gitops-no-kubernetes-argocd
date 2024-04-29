@@ -1,6 +1,6 @@
 # values.yaml
 giropopsSenhas:
-  image: linuxtips/giropops-senhas:1.0
+  image: ramonboorges/giropops-senhas-python-chainguard:86ce0fcf470fff5706edde051386d219d45b7754
   replicas: 2
   port: 5000
   imagePullPolicy: Always
