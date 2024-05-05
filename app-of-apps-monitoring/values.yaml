@@ -1,7 +1,7 @@
 argocd:
   prometheus:
-    enabled: false
+    enabled: "false"
     ingress: "https://prometheus-mycompany.com"
   grafana:
-    enabled: false
+    enabled: "false"
     ingress: "https://grafana-mycompany.com"
