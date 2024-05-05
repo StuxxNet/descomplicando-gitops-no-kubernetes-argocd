@@ -17,7 +17,7 @@ spec:
       - name: "prometheus.ingress.enabled"
         value: "true"
       - name: "prometheus.ingress.hosts[0]"
-        value: "{{ .Values.argocd.prometheus.ingress }}"
+        value: "teste.teste.com"
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     ref: values
