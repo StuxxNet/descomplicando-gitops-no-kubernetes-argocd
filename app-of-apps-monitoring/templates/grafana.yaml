@@ -14,6 +14,8 @@ spec:
       valueFiles:
       - $values/grafana/values.yaml
       parameters:
+      - name: "ingress.enabled"
+        value: "true"
       - name: "ingress.hosts[0]"
         value: "{{ .Values.argocd.grafana.ingress }}"
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
