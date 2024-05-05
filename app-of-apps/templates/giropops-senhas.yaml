@@ -7,7 +7,10 @@ metadata:
 spec:
   project: default
   source:
-    helm: {}
+    helm:
+      parameters:
+      - name: "giropopsSenhas.replicas"
+        value: "{{ .Values.argocd.giropopsSenhas.replicas }}"
     repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     path: giropops-senhas/helm
