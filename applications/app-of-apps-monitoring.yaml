@@ -13,11 +13,11 @@ spec:
     helm:
       parameters:
       - name: "argocd.prometheus.enabled"
-        value: true
+        value: "true"
       - name: "argocd.prometheus.ingress"
         value: "prometheus.company123.com"
       - name: "argocd.grafana.enabled"
-        value: true
+        value: "true"
       - name: "argocd.grafana.ingress"
         value: "grafana.company123.com"
     repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
