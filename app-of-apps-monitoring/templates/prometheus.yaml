@@ -1,0 +1,32 @@
+{{- if .Values.argocd.prometheus.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-app
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://prometheus-community.github.io/helm-charts'
+    chart: kube-prometheus-stack
+    targetRevision: 58.1.2
+    helm: 
+      parameters:
+      - name: "grafana.enabled"
+        value: false
+      - name: "prometheus.ingress.enabled"
+        value: true
+      - name: "prometheus.ingress.host[0]"
+        value: "{{ .Values.argocd.prometheus.ingress }}"
+  - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
+    targetRevision: main
+    ref: values
+  destination:
+    namespace: monitoring
+    server: 'https://kubernetes.default.svc'
+  syncPolicy:
+    automated:
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+{{- end }}

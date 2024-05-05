@@ -1,0 +1,4 @@
+apiVersion: v1
+name: app-of-apps-monitoring
+description: A helm chart for app-of-apps related to Monitoring
+version: 0.1.0
