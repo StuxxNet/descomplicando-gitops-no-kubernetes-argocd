@@ -8,17 +8,18 @@ spec:
   goTemplateOptions: ["missingkey=error"]
   generators:
   - matrix:
-    - git:
-        repoURL: https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd
-        revision: HEAD
-        directories:
-        - path: applicationset/apps/*/helm
-    - git:
-        repoURL: https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd
-        revision: HEAD
-        pathParamPrefix: cfg
-        files:
-        - path: applicationset/configs/dev.json
+      generators:
+      - git:
+          repoURL: https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd
+          revision: HEAD
+          directories:
+          - path: applicationset/apps/*/helm
+      - git:
+          repoURL: https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd
+          revision: HEAD
+          pathParamPrefix: cfg
+          files:
+          - path: applicationset/configs/dev.json
   template:
     metadata:
       name: '{{index .path.segments 2}}-{{.cluster.nome}}'
