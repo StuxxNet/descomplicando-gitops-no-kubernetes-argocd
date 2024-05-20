@@ -9,9 +9,6 @@ spec:
       github:
         owner: StuxxNet
         repo: descomplicando-gitops-no-kubernetes-argocd
-        # tokenRef:
-        #   secretName: github-token
-        #   key: token
       requeueAfterSeconds: 60
   template:
     metadata:
@@ -20,8 +17,14 @@ spec:
       project: "default"
       source:
         repoURL: https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd
-        targetRevision: '{{head_sha}}'
+        targetRevision: '{{ head_sha }}'
         path: app-of-apps/
+        helm:
+          parameters:
+            - name: argocd.giropopsSenhas.enabled
+              value: "true"
+            - name: argocd.randomLogger.enabled
+              value: "true"
       destination:
         server: https://kubernetes.default.svc
         namespace: 'app-of-apps-{{ branch_slug }}-{{ number }}'
