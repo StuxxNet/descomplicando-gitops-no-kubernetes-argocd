@@ -22,7 +22,7 @@ spec:
           - path: applicationset/configs/dev.json
   template:
     metadata:
-      name: '{{index .path.segments 2}}-{{.cluster.nome}}'
+      name: '{{index .path.segments 2}}-{{.cluster.name}}'
     spec:
       project: "default"
       source:
