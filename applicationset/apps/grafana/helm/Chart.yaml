@@ -5,5 +5,5 @@ description: A Helm chart for Grafana
 version: 0.1.0
 dependencies:
   - name: grafana
-    repository: 'ttps://grafana.github.io/helm-charts'
+    repository: 'https://grafana.github.io/helm-charts'
     version: 7.0.19
