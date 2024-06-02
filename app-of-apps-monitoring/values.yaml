@@ -5,3 +5,4 @@ argocd:
   grafana:
     enabled: "false"
     ingress: "https://grafana-mycompany.com"
+  ingressClassName: "nginx"

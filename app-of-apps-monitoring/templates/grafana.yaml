@@ -18,6 +18,8 @@ spec:
         value: "true"
       - name: "ingress.hosts[0]"
         value: "{{ .Values.argocd.grafana.ingress }}"
+      - name: "ingress.ingressClassName"
+        value: "{{ .Values.argocd.ingressClassName }}"
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     ref: values
