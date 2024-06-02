@@ -1,0 +1,5 @@
+# Chart.yaml
+apiVersion: v2
+name: hello-world
+description: A helm chart for Hello World application
+version: 0.1.0

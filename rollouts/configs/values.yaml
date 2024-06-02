@@ -1,0 +1,7 @@
+dashboard:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - rollouts.kubernetes.docker.internal
+    ingressClassName: nginx
