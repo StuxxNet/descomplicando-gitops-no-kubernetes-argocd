@@ -10,7 +10,8 @@ spec:
   - repoURL: 'https://prometheus-community.github.io/helm-charts'
     chart: kube-prometheus-stack
     targetRevision: 58.1.2
-    helm: 
+    helm:
+      skipCrds: true
       parameters:
       - name: "grafana.enabled"
         value: "false"
@@ -18,6 +19,7 @@ spec:
         value: "true"
       - name: "prometheus.ingress.hosts[0]"
         value: "{{ .Values.argocd.prometheus.ingress }}"
+      - name:
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     ref: values
