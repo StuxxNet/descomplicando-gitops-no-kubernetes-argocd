@@ -22,6 +22,16 @@ spec:
         value: "{{ .Values.argocd.ingressClassName }}"
       - name: "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
         value: "false"
+      - name: "prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues"
+        value: "false"
+      - name: "prometheus.prometheusSpec.probeSelectorNilUsesHelmValues"
+        value: "false"
+      - name: "prometheus.prometheusSpec.scrapeConfigSelectorNilUsesHelmValues"
+        value: "false"
+      - name: "prometheus.prometheusSpec.ruleSelectorNilUsesHelmValues"
+        value: "false"
+      - name: "prometheus.prometheusSpec.externalPrefixNilUsesHelmValues"
+        value: "false"
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     ref: values
