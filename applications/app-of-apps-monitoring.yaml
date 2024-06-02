@@ -15,11 +15,11 @@ spec:
       - name: "argocd.prometheus.enabled"
         value: "true"
       - name: "argocd.prometheus.ingress"
-        value: "prometheus.company123.com"
+        value: "prometheus.kubernetes.docker.internal"
       - name: "argocd.grafana.enabled"
         value: "true"
       - name: "argocd.grafana.ingress"
-        value: "grafana.company123.com"
+        value: "grafana.kubernetes.docker.internal"
     repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
   syncPolicy:
