@@ -11,7 +11,7 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: 58.1.2
     helm:
-      skipCrds: true
+      #skipCrds: true
       parameters:
       - name: "grafana.enabled"
         value: "false"
@@ -30,4 +30,5 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
 {{- end }}
