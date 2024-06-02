@@ -21,7 +21,7 @@ spec:
       - name: "prometheus.ingress.ingressClassName"
         value: "{{ .Values.argocd.ingressClassName }}"
       - name: "prometheus.prometheusSpec.serviceMonitorSelectorNilUsesHelmValues"
-        value: false
+        value: "false"
   - repoURL: 'https://github.com/StuxxNet/descomplicando-gitops-no-kubernetes-argocd'
     targetRevision: main
     ref: values
